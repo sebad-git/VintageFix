@@ -27,7 +27,7 @@
     font-family: 'Quicksand', sans-serif !important;
     color: var(--font-color) !important;
     background: var(--background-color) fixed !important;
-    padding-top: 12vmin !important;
+    padding-top: 8vmin !important;
   }
 
 hr { border-top: 0.5px solid var(--font-color) !important; }

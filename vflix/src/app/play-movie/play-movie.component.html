@@ -1,8 +1,32 @@
-  <div *ngIf="loaded" class="video-player">
 
-  <video width="640" height="480" controls>
+<div class="container-fluid">
+  <div *ngIf="loaded" class="video-player">
+  <a class="back" routerLink="/" > <i class="fas fa-arrow-left"></i> </a>
+  
+  <video class="player" id="moviePlayer" width="640" height="480"
+  controls autoplay poster="{{movie.poster}}" preload="auto" >
     <source src="{{movie.videoUrl}}" type="video/mp4">
   Your browser does not support the video tag.
   </video>
 
 </div>
+
+</div>
+
+<!--
+
+<script>
+
+$(document).on('click', '#moviePlayer', function (e) {
+    var video = $(this).get(0);
+    if (video.paused === false) {
+        video.pause();
+    } else {
+        video.play();
+    }
+    return false;
+});
+
+</script>
+-->
+

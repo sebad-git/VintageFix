@@ -1,11 +1,27 @@
+
 .video-player{
+    position: absolute !important;
+    top: 2vmin !important; left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
     background: black !important;
-    border-radius: 5px !important;
-    margin-top: 2vmin !important;
 }
 
 video{
-    padding: 2% !important;
     width: 100% !important;
     height: 80vmin !important;
+}
+
+.back{
+    z-index: 20;
+    position: absolute !important;
+    top: 3% !important; left: 3% !important; 
+    font-size: 4rem !important;
+    transition: 1s ease;
+}
+
+.back :hover, .back :active{ transform: scale(1.6) !important; }
+
+.player,.player:active, .player:hover{
+    border:none !important;
 }

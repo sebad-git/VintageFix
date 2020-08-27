@@ -3,9 +3,9 @@
     padding-right: 0 !important;
     padding: 1.2% !important;
     margin: 0 !important;
-    margin-left: 12% !important;
-    width:75% !important;
-    height:160vmin !important;
+    margin-left: 10% !important;
+    width:80% !important;
+    height:200vmin !important;
 }
 
 .movie img {
@@ -33,7 +33,7 @@
     font-size: 3.2rem !important;
     margin-left: 5% !important;
     padding-top: 6% !important;
-    width: 60% !important;
+    width: 90% !important;
     padding-bottom: 1% !important;
     letter-spacing: 0.2rem !important;
   }
@@ -51,7 +51,6 @@
     font-size: 2rem !important;
     z-index: 2 !important;
     margin-top: 3vmax !important;
-    margin-left: 10vmax !important;
   }
 
   span{ margin-left: 2vmin !important; }
