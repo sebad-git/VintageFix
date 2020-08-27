@@ -1,27 +1,23 @@
-[
-  {
-    "id" : 1,
-    "name" : "Horror"
-  },
 
-  {
-    "id" : 2,
-    "name" : "Drama"
-  },
+{
+  "es":  
+    [ 
+      { "id" : 0, "name" : "Todas.." },
+      { "id" : 1, "name" : "Horror" },
+      { "id" : 2, "name" : "Drama" },
+      { "id" : 3, "name" : "Comedia" }, 
+      { "id" : 4, "name" : "Ciencia Ficcion" },
+      { "id" : 5, "name" : "Animada" }
+    ]
+  ,
+  "en":
+    [ 
+      { "id" : 0, "name" : "All.." },
+      { "id" : 1, "name" : "Horror" },
+      { "id" : 2, "name" : "Drama" },
+      { "id" : 3, "name" : "Comedy" }, 
+      { "id" : 4, "name" : "Science Fiction" },
+      { "id" : 5, "name" : "Cartoons" }
+    ]
 
-  {
-    "id" : 3,
-    "name" : "Comedy"
-  },
-  
-  {
-    "id" : 4,
-    "name" : "Science Fiction"
-  },
-  
-  {
-    "id" : 5,
-    "name" : "Cartoons"
-  }
-  
-]
+}

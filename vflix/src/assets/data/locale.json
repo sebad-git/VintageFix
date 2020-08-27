@@ -1,79 +1,17 @@
-[
-  {
-    "id" : 1,
-    "category" : 1,
-    "name" : "The Dance of Life (1029)",
-    "plot" : "Burlesque comic Ralph 'Skid' Johnson (Skelly), and dancer Bonny Lee King (Carroll), end up together on a cold, rainy night at a train station, when he's thrown out and she's rejected from the same show. The two things they have in life are dancing and each other, if she could only keep him away from the booze, long enough to keep dancing.",
-    "poster" : "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Poster_of_the_movie_The_Dance_of_Life.jpg/1200px-Poster_of_the_movie_The_Dance_of_Life.jpg",
-    "ranking" : 2,
-    "lenght" : "1h 20m",
-    "videoUrl" : "http://publicdomainmovie.net/movie.php?id=TheDanceOfLifeaugust161929&type=.mp4"
+
+{
+  "es": { 
+    "home":"INICIO",
+    "contact":"CONTACTO",
+    "search":"Buscar...",
+    "movies":"Peliculas"
   },
 
-  {
-    "id" : 2,
-    "category" : 1,
-    "name" : "The Ape Man (1943)",
-    "plot" : "Dr. James Brewster (Bela Lugosi) and his colleague Dr. Randall (Henry Hall (actor)) are involved in a series of scientific experiments which have caused him to transform into an ape-man. In an attempt to obtain a cure Brewster believes that it will be necessary to inject himself with recently drawn human spinal fluid. When Randall uses to help him by providing the fluid, Brewster and his captive gorilla must attempt to find an appropriate donor.",
-    "poster" : "http://publicdomainmovies.net/wikimedia.php?id=The-Ape-Man-Poster.jpg",
-    "ranking" : 2,
-    "lenght" : "1h 20m",
-    "videoUrl" : "http://ia800202.us.archive.org/22/items/the_brain_that_wouldnt_die_ipod/the_brain_that_wouldnt_die_512kb.mp4"
-  },
-
-  {
-    "id" : 3,
-    "category" : 2,
-    "name" : "The Brain that Wouldn't Die (1962)",
-    "plot" : "Dr. Bill Cortner (Jason Evers) is a successful surgeon who has just saved a patient pronounced dead in the emergency room — a patient of his father (Bruce Brighton) — with an unorthodox surgical method. After the younger Cortner and his beautiful fiancée Jan Compton (Virginia Leith) are involved in a fiery car accident that decapitates Jan, Cortner collects her severed head and rushes it to his home basement laboratory, where he revives it and manages to keep it alive in a liquid-filled tray. Cortner now decides to commit murder to obtain an attractive Head transplant. As he hunts for a suitable specimen at a burlesque bar that night and on the street the next day, Jan begins to hatch a murderous plan. Filled with hatred for Cortner because he won't let her die, she communicates telepathy with a hideous mutant in the laboratory cell, telling it to kill the scientist.",
-    "poster" : "https://images-na.ssl-images-amazon.com/images/I/51K46CSZTDL._SY445_.jpg",
-    "ranking" : 2,
-    "lenght" : "1h 20m",
-    "videoUrl" : "http://ia800202.us.archive.org/22/items/the_brain_that_wouldnt_die_ipod/the_brain_that_wouldnt_die_512kb.mp4"
-  },
-
-  {
-    "id" : 4,
-    "category" : 1,
-    "name" : "Sherlock Holmes and the Secret Weapon",
-    "plot" : "Some plot Plot",
-    "poster" : "http://publicdomainmovies.net/wikimedia.php?id=Sherlock_Holmes_and_the_Secret_Weapon_2.jpg",
-    "ranking" : 2,
-    "lenght" : "1h 20m",
-    "videoUrl" : "http://ia800202.us.archive.org/22/items/the_brain_that_wouldnt_die_ipod/the_brain_that_wouldnt_die_512kb.mp4"
-  },
-
-  {
-    "id" : 5,
-    "category" : 1,
-    "name" : "Sherlock Holmes and the Secret Weapon",
-    "plot" : "Some plot Plot",
-    "poster" : "http://publicdomainmovies.net/wikimedia.php?id=Sherlock_Holmes_and_the_Secret_Weapon_2.jpg",
-    "ranking" : 2,
-    "lenght" : "1h 20m",
-    "videoUrl" : "http://ia800202.us.archive.org/22/items/the_brain_that_wouldnt_die_ipod/the_brain_that_wouldnt_die_512kb.mp4"
-  },
-
-  {
-    "id" : 6,
-    "category" : 1,
-    "name" : "The Ape Man (1943)",
-    "plot" : "Dr. James Brewster (Bela Lugosi) and his colleague Dr. Randall (Henry Hall (actor)) are involved in a series of scientific experiments which have caused him to transform into an ape-man. In an attempt to obtain a cure Brewster believes that it will be necessary to inject himself with recently drawn human spinal fluid. When Randall uses to help him by providing the fluid, Brewster and his captive gorilla must attempt to find an appropriate donor.",
-    "poster" : "http://publicdomainmovies.net/wikimedia.php?id=The-Ape-Man-Poster.jpg",
-    "ranking" : 2,
-    "lenght" : "1h 20m",
-    "videoUrl" : "http://ia800202.us.archive.org/22/items/the_brain_that_wouldnt_die_ipod/the_brain_that_wouldnt_die_512kb.mp4"
-  },
-
-  {
-    "id" : 7,
-    "category" : 2,
-    "name" : "The Ape Man (1943)",
-    "plot" : "Dr. James Brewster (Bela Lugosi) and his colleague Dr. Randall (Henry Hall (actor)) are involved in a series of scientific experiments which have caused him to transform into an ape-man. In an attempt to obtain a cure Brewster believes that it will be necessary to inject himself with recently drawn human spinal fluid. When Randall uses to help him by providing the fluid, Brewster and his captive gorilla must attempt to find an appropriate donor.",
-    "poster" : "http://publicdomainmovies.net/wikimedia.php?id=The-Ape-Man-Poster.jpg",
-    "ranking" : 2,
-    "lenght" : "1h 20m",
-    "videoUrl" : "http://ia800202.us.archive.org/22/items/the_brain_that_wouldnt_die_ipod/the_brain_that_wouldnt_die_512kb.mp4"
+  "en": { 
+    "home":"HOME",
+    "contact":"CONTACT",
+    "search":"Seach...",
+    "movies":"Movies"
+        
   }
-
-]
+}

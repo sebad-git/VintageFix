@@ -12,33 +12,18 @@ export class TranslatorService {
   public static readonly ENGLISH:string = "en";
   public static readonly SPANISH:string = "es";
 
-  private config: any;
+  private readonly localeUrl = './assets/data/locale.json';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
   
-  private readonly dataUrl = './assets/data/locale.json';
-
-  /*
-  getWord(): Observable<any> {
-    return this.http.get<any[]>(this.dataUrl).pipe(
-      map((data ) => {
-        return data.filter( mdata => mdata.id==+mid)[0];
+  public getTranslator(): Observable<any> {
+    return this.http.get<any[]>(this.localeUrl).pipe(
+      map((translatorFile) => {
+        if(navigator.language.includes(TranslatorService.SPANISH)){
+          return translatorFile[TranslatorService.SPANISH];
+        }
+        return translatorFile[TranslatorService.ENGLISH];
     }));
-  }
+ }
 
-  public loadConfig() {
-    return this.http.get('./assets/data/locale.json')
-      .toPromise()
-      .then((config: any) => {
-        this.config = config;
-      })
-      .catch((err: any) => {
-        console.error(err);
-      });
-  }
-  getConfig(params: string) {
-    return this.config[params];
-  }
-  */
- 
 }

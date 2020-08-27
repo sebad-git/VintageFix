@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../../shared/services/movie.service';
+import { TranslatorService } from '../../shared/services/translator.service';
 import { Movie, Category } from '../../shared/model/classes';
 
 @Component({
@@ -11,21 +12,25 @@ export class HomeComponent implements OnInit {
 
   public movies: Movie[];
   public categories: Category[];
+  
+  public lblSearch:string;
+  public lblMovies:string;
 
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService,private translatorService:TranslatorService) { }
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
     try {
       this.movieService.getAllCategories().subscribe((cats: Category[]) => {
-        this.categories = new Array<Category>();
-        this.categories.push( new Category(0,"All..."));
-        cats.forEach(category => { this.categories.push(category); });
+        this.categories = cats;
         this.movieService.getAllMovies().subscribe((data: Movie[]) => {
           this.movies = data;
         });
       });
-      
+      this.translatorService.getTranslator().subscribe((data) => {
+        this.lblSearch = data["search"];
+        this.lblMovies = data["movies"];
+      });
     } catch (error) { alert(error); }
   }
 
