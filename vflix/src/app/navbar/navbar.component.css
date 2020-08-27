@@ -1,0 +1,41 @@
+
+nav{
+    z-index: 999 !important;
+    margin-bottom: 0 !important;
+    border: 0 !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--background-color) !important;
+    box-shadow: 0 0 0 0 #333333, 0 3px 10px 0 var(--shadow) !important;
+  }
+  
+  nav li a{ 
+    color: var(--nav-font-color) !important;
+    font-size: 1.3rem !important;
+    text-decoration: none !important;
+    font-style: bold !important;
+    text-transform: uppercase !important;
+    transition: 1s ease;
+    margin-top: 1vmin !important;
+    border: none !important;
+  }
+
+  nav li a:hover,.nav li a:active{ 
+    color: var(--nav-selected-font-color) !important;
+    border-bottom: var(--nav-selected-font-color) 1px solid !important;
+  }
+  
+  .navbar-brand { 
+    text-align: center center !important;
+    font-family: 'Alata', sans-serif;
+    color: var(--font-color-logo) !important; 
+    font-size: 4.2rem !important;
+    font-style: bold;
+    text-shadow: 3px 3px var(--shadow) !important;
+  }
+
+
+@media screen and (max-width: 800px) {
+  
+}

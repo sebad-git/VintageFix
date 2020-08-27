@@ -1,0 +1,27 @@
+[
+  {
+    "id" : 1,
+    "name" : "Horror"
+  },
+
+  {
+    "id" : 2,
+    "name" : "Drama"
+  },
+
+  {
+    "id" : 3,
+    "name" : "Comedy"
+  },
+  
+  {
+    "id" : 4,
+    "name" : "Science Fiction"
+  },
+  
+  {
+    "id" : 5,
+    "name" : "Cartoons"
+  }
+  
+]

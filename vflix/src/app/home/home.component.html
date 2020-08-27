@@ -1,0 +1,47 @@
+ <!-- ********************* MOVIES ********************* -->
+
+ <section id="movies">
+
+    <div class="movies-section">
+      <br>
+
+      <div class="row"> 
+
+        <div class="col-sm-1"> 
+          <h4 id="movies-lbl">Movies</h4>
+        </div>
+        <div class="col-sm-4">
+          <select name="categories" id="category" (change)='onCategorySelected($event)'>
+            <option *ngFor="let cat of categories;" value="{{cat.id}}">{{cat.name}}</option>
+          </select>
+        </div>
+        <div class="col-sm-4">
+        <div class="search">
+          <span> <input type="text" placeholder="Buscar.." > 
+            <button><i class="fas fa-search-plus"></i></button> 
+          </span>
+        </div>  
+      </div>
+      
+      </div>
+
+      <div class="movies-container">
+
+        <div *ngFor="let movie of movies;" class="movie zoom-in">
+          <a routerLink="/movie-details/{{movie.id}}">
+            <img src="{{movie.poster}}"/>
+            <div class="movieDetails">
+              <p>{{movie.name}}</p>
+              <h5>{{movie.lenght}}</h5>
+            </div>
+          </a>
+          
+        </div>
+ 
+      </div>
+
+    </div>
+
+    <span class="clearfix"></span>
+
+  </section>

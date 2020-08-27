@@ -1,0 +1,15 @@
+footer {
+    background-color: var(--background-color) !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0.5rem !important;
+    z-index: 999 !important;
+    font-family: 'Alata', sans-serif !important;
+    color: var(--font-color) !important;
+    font-size: 1.5rem;
+    font-style: bold;
+    text-align: center;
+    text-transform: uppercase !important;
+    box-shadow: 0 3px 10px 0 #303030, 0 3px 10px 0 #303030 !important;
+    margin-top: 2em !important;
+  }

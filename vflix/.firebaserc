@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "vintage-fix"
+  },
+  "targets": {
+    "vintage-fix": {
+      "hosting": {
+        "vflix": [
+          "vintage-fix"
+        ]
+      }
+    }
+  }
+}

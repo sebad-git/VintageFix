@@ -1,0 +1,11 @@
+.video-player{
+    background: black !important;
+    border-radius: 5px !important;
+    margin-top: 2vmin !important;
+}
+
+video{
+    padding: 2% !important;
+    width: 100% !important;
+    height: 80vmin !important;
+}
