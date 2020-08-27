@@ -7,7 +7,8 @@
       { "id" : 2, "name" : "Drama" },
       { "id" : 3, "name" : "Comedia" }, 
       { "id" : 4, "name" : "Ciencia Ficcion" },
-      { "id" : 5, "name" : "Animada" }
+      { "id" : 5, "name" : "Animada" },
+      { "id" : 6, "name" : "Accion/Aventura" }
     ]
   ,
   "en":
@@ -17,7 +18,8 @@
       { "id" : 2, "name" : "Drama" },
       { "id" : 3, "name" : "Comedy" }, 
       { "id" : 4, "name" : "Science Fiction" },
-      { "id" : 5, "name" : "Cartoons" }
+      { "id" : 5, "name" : "Cartoons" },
+      { "id" : 6, "name" : "Action/Adventure" }
     ]
 
 }
