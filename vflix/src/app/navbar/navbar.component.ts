@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TranslatorService } from '../../shared/services/translator.service';
+import { TranslatorService } from '../../services/translator.service';
 
 @Component({
   selector: 'app-navbar',

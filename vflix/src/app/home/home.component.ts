@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieService } from '../../shared/services/movie.service';
-import { TranslatorService } from '../../shared/services/translator.service';
-import { Movie, Category } from '../../shared/model/classes';
+import { MovieService } from '../../services/movie.service';
+import { TranslatorService } from '../../services/translator.service';
+import { Movie, Category } from '../../model/classes';
 
 @Component({
   selector: 'app-home',

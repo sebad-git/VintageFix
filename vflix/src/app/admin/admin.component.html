@@ -1,0 +1,62 @@
+
+<header> <app-navbar></app-navbar> </header>
+ 
+
+ <section id="admin" >
+
+    <br>
+    <div class="text-center card-panel centered-panel" >
+      <h4 class="text-center">Add Movie</h4> <hr>
+      
+      <div *ngIf="errorMessage" class="alert alert-danger text-center">{{errorMessage}}</div>
+
+      <div class="row text-center" >
+        <div class="col-sm-12 text-center">  
+          <input type="text" [(ngModel)]="title" class="form-control input" placeholder="Title" >
+        </div>
+      </div>
+
+      <div class="row text-center" >
+      <div class="col-sm-12 text-center">
+        <select name="categories" id="category" (change)='onCategorySelected($event)'>
+          <option *ngFor="let cat of categories;" value="{{cat.id}}">{{cat.name}}</option>
+        </select>
+      </div>
+    </div>
+    
+      <div class="row text-center">
+        <div class="col-sm-12 text-center">
+            <textarea type="text" [(ngModel)]="plot" class="form-control input" 
+            placeholder="Plot" minlength="3000">
+            </textarea>
+        </div>
+
+        <div class="row text-center" >
+            <div class="col-sm-12 text-center">
+                <input type="text" [(ngModel)]="poster" class="form-control input" placeholder="Poster" >
+            </div>
+          </div>
+      
+        <div class="row text-center" >
+            <div class="col-sm-12 text-center">
+                <input type="text" [(ngModel)]="time" class="form-control input" placeholder="Time" >
+            </div>
+          </div>
+          
+          <div class="row text-center" >
+            <div class="col-sm-12 text-center">
+                <input type="text" [(ngModel)]="video" class="form-control input" placeholder="Video Url" >
+            </div>
+          </div>
+        
+      </div>
+      <button (click)="OnAddMovie()" class="btn btn-lg btn-block input" type="button">Create</button>
+      <br>
+
+      <br>
+    
+    </div>
+    
+</section>
+
+<app-footer></app-footer>
