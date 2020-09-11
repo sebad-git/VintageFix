@@ -25,9 +25,11 @@ export class AdminComponent implements OnInit {
   public poster:string;
   public time:string;
   public video:string;
+  public ranking:number;
   
   ngOnInit(): void {
     window.scrollTo(0, 0);
+    if(sessionStorage.getItem("user")){ this.loggiedIn=true; }
     try {
       this.movieService.getAllCategories().subscribe((cats: Category[]) => {
         this.categories = cats;
@@ -37,12 +39,14 @@ export class AdminComponent implements OnInit {
 
   onLogin(){
     try {
-      this.errorMessage=undefined; this.infoMessage=undefined; 
+      if(sessionStorage.getItem("user")){ this.loggiedIn=true; return; }
+      this.errorMessage=undefined; this.infoMessage=undefined;
       if(!this.user){ this.showError("User Invalid"); return; }
       if(!this.password){ this.showError("Password Invalid"); return; }
       if(this.user=="admin" && this.password=="vflix" ){ 
         this.errorMessage=undefined;
         this.loggiedIn=true;
+        sessionStorage.setItem("user", this.user);
       }else{
         this.showError("User or Password incorrect."); return;
       }
@@ -65,7 +69,7 @@ export class AdminComponent implements OnInit {
       if(!this.video){ this.showError("Video url source is empty."); return; }
   
       const newMovie:Movie = new Movie( this.title, this.plot, 
-        this.poster,this.category, 1,this.time,this.video,"id");
+        this.poster,this.category,this.ranking,this.time,this.video,null);
 
       this.movieService.getMovieCount().subscribe((index: number) => {
         this.movieService.addMovie(index,newMovie).subscribe(x => {

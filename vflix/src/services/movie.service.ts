@@ -53,7 +53,7 @@ return this.http.get<Movie[]>(heroesURL);
  
   addMovie(index:number,movie:Movie) {
     const url = this.moviesUrl.replace(".json","");
-    return this.http.put(url+index+".json",movie);
+    return this.http.put(url+"/"+index+".json",movie);
   }
   
 }
