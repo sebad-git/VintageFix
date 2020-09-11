@@ -14,14 +14,13 @@ export class MovieService {
   constructor(private http: HttpClient) { }
 
   private readonly moviesUrl =  'https://vintage-fix.firebaseio.com/1/movies.json';
-  private readonly countMovies =  'https://vintage-fix.firebaseio.com/1/movies.json?shallow=true';
   private readonly categoryDatabaseEN = 'https://vintage-fix.firebaseio.com/0/categories/0/en.json';
   private readonly categoryDatabaseES = 'https://vintage-fix.firebaseio.com/0/categories/0/es.json';
   
   public getAllMovies(): Observable<Movie[]> { return this.http.get<Movie[]>(this.moviesUrl); }
 
   public getMovieCount(): Observable<number> {
-    return this.http.get<Object>(this.countMovies).pipe(
+    return this.http.get<Object>(this.moviesUrl+"?shallow=true").pipe(
       map((data: Object) => { return JSON.stringify(data).split(",").length }));
   }
   
