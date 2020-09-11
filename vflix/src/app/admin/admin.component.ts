@@ -74,6 +74,13 @@ export class AdminComponent implements OnInit {
       this.movieService.getMovieCount().subscribe((index: number) => {
         this.movieService.addMovie(index,newMovie).subscribe(x => {
           this.showInfo("Movie Created");
+          this.title=undefined; 
+          this.plot=undefined;
+          this.category=undefined;
+          this.poster=undefined;
+          this.time=undefined;
+          this.video=undefined;
+          this.ranking=undefined;
         });
       });
         

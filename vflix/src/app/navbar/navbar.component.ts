@@ -12,13 +12,13 @@ export class NavbarComponent implements OnInit {
   constructor(private translatorService:TranslatorService ) { }
 
   public home:string;
-  public contact:string;
+  public bestRanked:string;
 
   ngOnInit(): void {
     try {
       this.translatorService.getTranslator().subscribe((data) => {
         this.home = data["home"];
-        this.contact = data["contact"];
+        this.bestRanked = data["bestRanked"];
       });
     } 
     catch (error) { alert(error); }

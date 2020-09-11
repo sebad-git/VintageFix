@@ -51,26 +51,26 @@
     
       <div class="row text-center">
         <div class="col-sm-12 text-center">
-            <textarea type="text" [(ngModel)]="plot" class="form-control input" 
-            placeholder="Plot" minlength="3000">
+            <textarea style="min-height: 20rem !important;" 
+            type="text" [(ngModel)]="plot" class="form-control input" 
+            placeholder="Plot">
             </textarea>
         </div>
+
 
         <div class="row text-center" >
             <div class="col-sm-12 text-center">
                 <input type="text" [(ngModel)]="poster" class="form-control input" placeholder="Poster" >
             </div>
+            
           </div>
       
-        <div class="row text-center" >
-            <div class="col-sm-12 text-center">
-                <input type="text" [(ngModel)]="time" class="form-control input" placeholder="Time" >
-            </div>
-          </div>
-          
           <div class="row text-center" >
-            <div class="col-sm-12 text-center">
-                <input type="text" [(ngModel)]="ranking" class="form-control input" placeholder="Ranking" >
+            <div class="col-sm-6 text-center">
+              <input type="text" [(ngModel)]="time" class="form-control input" placeholder="Time" >
+            </div>
+            <div class="col-sm-6 text-center">
+                <input type="number" [(ngModel)]="ranking" class="form-control input" placeholder="Ranking" >
             </div>
           </div>
           

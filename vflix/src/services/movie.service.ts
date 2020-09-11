@@ -36,11 +36,14 @@ export class MovieService {
       map((data: Movie[]) => {
         return data.filter( mdata => mdata.category==+catId);
     }));
-/*
-const heroesURL = this.movieDatabase+"?category="+catId;
-return this.http.get<Movie[]>(heroesURL);
-*/
-}
+  }
+
+  public findMoviesBestRanked() : Observable<Movie[]> {
+    return this.getAllMovies().pipe(
+      map((data: Movie[]) => {
+        return data.filter( mdata => mdata.category>=5);
+    }));
+  }
   
   public getAllCategories(): Observable<Category[]> {
     if (navigator.language.includes(TranslatorService.SPANISH)) {

@@ -2,16 +2,15 @@
 {
   "es": { 
     "home":"INICIO",
-    "contact":"CONTACTO",
+    "bestRanked":"Mejor Valoradas",
     "search":"Buscar...",
     "movies":"Peliculas"
   },
 
   "en": { 
     "home":"HOME",
-    "contact":"CONTACT",
+    "bestRanked":"Best Ranked",
     "search":"Seach...",
-    "movies":"Movies"
-        
+    "movies":"Movies"     
   }
 }

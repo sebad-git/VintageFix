@@ -54,3 +54,7 @@
   }
 
   span{ margin-left: 2vmin !important; }
+
+  @media screen and (max-width: 768px) {
+    .movie{ margin: 0 !important; margin-top:5rem !important; margin-left: 2.5% !important; width:95% !important; } 
+  }
