@@ -5,10 +5,35 @@
  <section id="admin" >
 
     <br>
-    <div class="text-center card-panel centered-panel" >
-      <h4 class="text-center">Add Movie</h4> <hr>
+
+    <!-- LOGIN -->
+
+    <div *ngIf="errorMessage" class="alert alert-danger text-center">{{errorMessage}}</div>
+    <div *ngIf="infoMessage" class="alert alert-info text-center">{{infoMessage}}</div>
+
+    <div *ngIf="!loggiedIn" class="text-center card-panel centered-panel" >
+      <h4 class="text-center">LOGIN</h4> <hr>
       
-      <div *ngIf="errorMessage" class="alert alert-danger text-center">{{errorMessage}}</div>
+      <div class="row text-center" >
+        <div class="col-sm-12 text-center">  
+          <input type="text" [(ngModel)]="user" class="form-control input" placeholder="User" >
+        </div>
+      </div>
+
+      <div class="row text-center" >
+        <div class="col-sm-12 text-center">
+          <input type="password" [(ngModel)]="password" class="form-control input" placeholder="Password" >
+        </div>
+      </div>
+            <button (click)="onLogin()" class="btn btn-lg btn-block input" type="button">Login</button>
+      <br>
+
+    </div>
+
+    <!-- ADMIN -->
+
+    <div *ngIf="loggiedIn" class="text-center card-panel centered-panel" >
+      <h4 class="text-center">Add Movie</h4> <hr>
 
       <div class="row text-center" >
         <div class="col-sm-12 text-center">  

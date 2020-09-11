@@ -14,6 +14,10 @@ export class AdminComponent implements OnInit {
   public categories: Category[];
 
   public errorMessage:string;
+  public infoMessage:string;
+
+  public loggiedIn: boolean;
+  public user:string; public password:string;
 
   public title:string; 
   public plot:string;
@@ -31,28 +35,48 @@ export class AdminComponent implements OnInit {
     } catch (error) { alert(error); }
   }
 
-  onCategorySelected(event){ this.category = +event.target.value; }
+  onLogin(){
+    try {
+      this.errorMessage=undefined; this.infoMessage=undefined; 
+      if(!this.user){ this.showError("User Invalid"); return; }
+      if(!this.password){ this.showError("Password Invalid"); return; }
+      if(this.user=="admin" && this.password=="vflix" ){ 
+        this.errorMessage=undefined;
+        this.loggiedIn=true;
+      }else{
+        this.showError("User or Password incorrect."); return;
+      }
+    } catch (error) { alert(error); }
+  }
+
+  onCategorySelected(event){ 
+    try { this.category = +event.target.value; }
+    catch (error) { alert(error); }
+  }
 
   OnAddMovie(){
-    if(!this.title || !this.plot){
-      this.errorMessage="No data"; window.scrollTo(0, 0); return;
-    }
-    this.movieService.getAllMovies().subscribe((movies: Movie[]) => {
-      const newMovie:Movie = new Movie(
-        1,
-        "Test Movie",
-        "Test Plot",
-        "Test Poster",
-        2,
-        2,
-        "1 min",
-        "http:...."
-      );
-      this.movieService.addMovie(newMovie,movies.length).subscribe(x => {
-        alert("MOVIE POSTED");
-      });
-      
-    });
+    try {
+      this.errorMessage=undefined; this.infoMessage=undefined;
+      if(!this.title){ this.showError("Title is empty."); return; }
+      if(!this.plot){ this.showError("Plot is empty."); return; }
+      if(!this.category || this.category<=0 ){ this.showError("Select a Category."); return; }
+      if(!this.poster){ this.showError("Poster is empty."); return; }
+      if(!this.time){ this.showError("Time is empty."); return; }
+      if(!this.video){ this.showError("Video url source is empty."); return; }
+  
+      const newMovie:Movie = new Movie( this.title, this.plot, 
+        this.poster,this.category, 1,this.time,this.video,"id");
 
+      this.movieService.getMovieCount().subscribe((index: number) => {
+        this.movieService.addMovie(index,newMovie).subscribe(x => {
+          this.showInfo("Movie Created");
+        });
+      });
+        
+    }  catch (error) { alert(error); }
   }
+
+  private showError(messsage:string){ this.errorMessage=messsage; window.scrollTo(0, 0); }
+  private showInfo(messsage:string){ this.infoMessage=messsage; window.scrollTo(0, 0); }
+
 }

@@ -14,16 +14,21 @@ export class MovieService {
   constructor(private http: HttpClient) { }
 
   private readonly moviesUrl =  'https://vintage-fix.firebaseio.com/1/movies.json';
-  private readonly addMovieUrl =  'https://vintage-fix.firebaseio.com/1.json';
+  private readonly countMovies =  'https://vintage-fix.firebaseio.com/1/movies.json?shallow=true';
   private readonly categoryDatabaseEN = 'https://vintage-fix.firebaseio.com/0/categories/0/en.json';
   private readonly categoryDatabaseES = 'https://vintage-fix.firebaseio.com/0/categories/0/es.json';
   
   public getAllMovies(): Observable<Movie[]> { return this.http.get<Movie[]>(this.moviesUrl); }
- 
-  public findMovie(mid:number) : Observable<Movie> {
+
+  public getMovieCount(): Observable<number> {
+    return this.http.get<Object>(this.countMovies).pipe(
+      map((data: Object) => { return JSON.stringify(data).split(",").length }));
+  }
+  
+  public findMovie(mid:string) : Observable<Movie> {
     return this.getAllMovies().pipe(
       map((data: Movie[]) => {
-        return data.filter( mdata => mdata.id==+mid)[0];
+        return data.filter( mdata => mdata.id==mid)[0];
     }));
   }
 
@@ -46,8 +51,9 @@ return this.http.get<Movie[]>(heroesURL);
     }
  }
  
-  addMovie(movie:Movie,index:number) {
-    return this.http.put("https://vintage-fix.firebaseio.com/1/movies/"+index+".json",movie);
+  addMovie(index:number,movie:Movie) {
+    const url = this.moviesUrl.replace(".json","");
+    return this.http.put(url+index+".json",movie);
   }
-
+  
 }
