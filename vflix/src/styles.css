@@ -5,17 +5,16 @@
 :root {
     --background-color: #181717;
     --font-color: #f2f2f2;
-    --font-color-logo: #adecb0;
+    --font-color-logo: #fd4b45;
     --font-dim: #b3b0b0;
     --nav-font-color: #f2f2f2;
-    --nav-selected-font-color: #adecb0;
+    --nav-selected-font-color: #fd4b45;
     --a-selected-bk-color: #6855741f;
     --shadow: #0c0b0b;
-    --glow: #246924e7;
-    --footer-background:#2c6896ea;
+    --glow: #693824e7;
     --overlay: #252521cb;
   }
-  
+
   html {
     height: 100% !important; width: 100% !important;
     margin: 0 !important; padding: 0 !important;
@@ -41,10 +40,9 @@ a, a:hover{ color: var(--font-color); text-decoration: none; }
 
 /***** INPUTS *****/
 
-button { 
+button {
   color: var(--background-color) !important;
-  border: 1px solid var(--background-color) !important;
-  padding: 0.6rem !important; margin: 0.1rem !important;
+  margin: 0.1rem !important;
   transition: 0.5 ease !important;
   font-size: 1.2rem !important;
   border-radius: 10px !important;
@@ -73,9 +71,9 @@ input[type=text], input[type=password], input[type=email],input[type=number], te
   padding: 0.8vmin;
 }
 
-input[type=text]:focus, input[type=text]:active, 
-input[type=password]:focus,input[type=password]:active, 
-input[type=email]:focus, input[type=email]:active, 
+input[type=text]:focus, input[type=text]:active,
+input[type=password]:focus,input[type=password]:active,
+input[type=email]:focus, input[type=email]:active,
 input[type=number]:focus, input[type=number]:active,
 textarea:active, textarea:focus {
   border: 1px var(#818863) solid !important;
@@ -89,15 +87,15 @@ select {
   width: 100% !important;
   background-color: var(--background-color) !important;
   margin-top: 5px !important;
-  color:var(--font-color-logo);
+  color:var(--font-color);
 }
 
-select option { 
-  background-color: var(--background-color) !important; 
+select option {
+  background-color: var(--background-color) !important;
 }
 
-select option:hover,select option:active,select option:focus, 
-select:active, select:hover,select:focus, option:checked { 
+select option:hover,select option:active,select option:focus,
+select:active, select:hover,select:focus, option:checked {
   background-color: var(--background-color) !important;
   outline: none !important;
 }
@@ -127,5 +125,5 @@ select:active, select:hover,select:focus, option:checked {
 .hideOnMobile{ display: visible !important; }
 .showOnMobile{ display: none !important; }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
 }

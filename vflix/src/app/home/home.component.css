@@ -93,3 +93,8 @@ input{
   transform: translateY(-1px) !important;
 }
 
+
+@media screen and (max-width: 768px) {
+  .movies-section{ padding: 1% !important; }
+  .movies-container{ padding-left: 2% !important;  }
+}
