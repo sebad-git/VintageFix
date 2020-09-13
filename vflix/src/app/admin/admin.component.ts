@@ -61,15 +61,23 @@ export class AdminComponent implements OnInit {
   OnAddMovie(){
     try {
       this.errorMessage=undefined; this.infoMessage=undefined;
+      
       if(!this.title){ this.showError("Title is empty."); return; }
       if(!this.plot){ this.showError("Plot is empty."); return; }
       if(!this.category || this.category<=0 ){ this.showError("Select a Category."); return; }
-      if(!this.poster){ this.showError("Poster is empty."); return; }
+     
+      if(!this.poster){ this.showError("Poster is empty."); return; } 
+      if(!this.poster.includes(".jpg") && !this.poster.includes(".png") ){ 
+        this.showError("The Poster url must be an image."); return;
+      }
+      
       if(!this.time){ this.showError("Time is empty."); return; }
+
       if(!this.video){ this.showError("Video url source is empty."); return; }
-  
-      const newMovie:Movie = new Movie( this.title, this.plot, 
-        this.poster,this.category,this.ranking,this.time,this.video,null);
+      if(!this.video.includes(".mp4")){ this.showError("The Video url must contain mp4."); return; }
+
+      const newMovie:Movie = new Movie( this.title, this.plot,
+        this.poster,this.category,this.ranking,this.time,this.video);
 
       this.movieService.getMovieCount().subscribe((index: number) => {
         this.movieService.addMovie(index,newMovie).subscribe(x => {
@@ -83,8 +91,7 @@ export class AdminComponent implements OnInit {
           this.ranking=undefined;
         });
       });
-        
-    }  catch (error) { alert(error); }
+    }  catch (error) { this.showError(error); }
   }
 
   private showError(messsage:string){ this.errorMessage=messsage; window.scrollTo(0, 0); }

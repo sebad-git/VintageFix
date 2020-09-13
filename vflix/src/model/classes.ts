@@ -1,7 +1,7 @@
 
 export class Movie  {
     
-  public appId:string;
+  public id:number;
 
     constructor(
       public name:string,
@@ -10,16 +10,14 @@ export class Movie  {
       public category:number,
       public ranking:number,
       public lenght:string,
-      public videoUrl:string,
-      public id:number
-      ) 
-      { this.appId = "vflix-sdm"; }
+      public videoUrl:string
+      ) {}
 }
 
 export class Category {
 
   constructor(
-    
+
     public id:number,
     public name:string
     

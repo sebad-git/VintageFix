@@ -16,12 +16,11 @@ video{
     z-index: 20;
     position: absolute !important;
     top: 3% !important; left: 3% !important; 
-    font-size: 4rem !important;
+    font-size: 3rem !important;
     transition: 1s ease;
 }
 
 .back :hover, .back :active{ transform: scale(1.6) !important; }
 
-.player,.player:active, .player:hover{
-    border:none !important;
-}
+.player,.player:active, .player:hover{ border:none !important; }
+
