@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { AdminComponent } from './admin/admin.component';
+import { SliderComponent } from './slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AdminComponent } from './admin/admin.component';
     NavbarComponent,
     FooterComponent,
     MovieDetailsComponent,
-    AdminComponent
+    AdminComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,

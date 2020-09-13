@@ -60,16 +60,6 @@
   text-shadow: 1px 1px 1px #242A26, 2px 2px 3px #242A26 !important;
 }
 
-.fa-star{
-  font-size: smaller !important;
-  text-shadow: 1px 1px 1px #242A26, 2px 2px 3px #242A26 !important;
-  color: #f2f2f2 !important;
-}
-
-.checked{
-  color: var(--font-color-logo) !important;
-}
-
 .search {
   width: 100% !important;
   padding-top: 0.5vmin !important;
@@ -78,7 +68,10 @@
 input{
   width: 90% !important;
   color: #f2f2f2 !important;
-  border: 1px solid #d6d5d5 !important; 
+  border: 1px solid #9b9999 !important;
+  border-radius: 2px !important;
+  background: linear-gradient(145deg, #161515, #1a1919) !important;
+  box-shadow:  20px 20px 60px #141414, -20px -20px 60px #1c1a1a !important;
 }
 
 .search button{
@@ -88,7 +81,7 @@ input{
   padding: 1.3vmin !important;
   background: var(--font-color-logo) !important;
   border-radius: 0 5px 5px 0 !important;
-  color: #504e4e !important;
+  color: #f0ebeb !important;
   box-shadow: none !important;
   transform: translateY(-1px) !important;
 }

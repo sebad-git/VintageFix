@@ -19,11 +19,13 @@ export class AdminComponent implements OnInit {
   public loggiedIn: boolean;
   public user:string; public password:string;
 
-  public title:string; 
+  public title:string;
   public plot:string;
   public category:number;
   public poster:string;
-  public time:string;
+  public banner:string;
+  public hours:number;
+  public minutes:number;
   public video:string;
   public ranking:number;
   
@@ -67,17 +69,14 @@ export class AdminComponent implements OnInit {
       if(!this.category || this.category<=0 ){ this.showError("Select a Category."); return; }
      
       if(!this.poster){ this.showError("Poster is empty."); return; } 
-      if(!this.poster.includes(".jpg") && !this.poster.includes(".png") ){ 
-        this.showError("The Poster url must be an image."); return;
-      }
-      
-      if(!this.time){ this.showError("Time is empty."); return; }
+      if(!this.hours){ this.showError("Time is empty."); return; }
 
       if(!this.video){ this.showError("Video url source is empty."); return; }
       if(!this.video.includes(".mp4")){ this.showError("The Video url must contain mp4."); return; }
 
+      const time:string = this.hours>0? `${this.hours}h ${this.minutes}ms.` : `${this.minutes}ms.` 
       const newMovie:Movie = new Movie( this.title, this.plot,
-        this.poster,this.category,this.ranking,this.time,this.video);
+      this.poster,this.banner,this.category,this.ranking,time,this.video);
 
       this.movieService.getMovieCount().subscribe((index: number) => {
         this.movieService.addMovie(index,newMovie).subscribe(x => {
@@ -86,9 +85,11 @@ export class AdminComponent implements OnInit {
           this.plot=undefined;
           this.category=undefined;
           this.poster=undefined;
-          this.time=undefined;
+          this.hours=undefined;
+          this.minutes=undefined;
           this.video=undefined;
           this.ranking=undefined;
+          this.banner=undefined;
         });
       });
     }  catch (error) { this.showError(error); }

@@ -16,9 +16,19 @@ export class Firebase {
       this.firebaseUrl = `${this.firebaseUrl}/${value}`; 
       return this;
     }
-  
+
     public addAuth():Firebase { 
       this.firebaseUrl = `${this.firebaseUrl}.json?auth=${this.authToken}`; 
+      return this;
+    }
+
+    public setNumFilter(field:string,value:number):Firebase { 
+      this.firebaseUrl = `${this.firebaseUrl}&orderBy="${field}"&startAt=${value}&endAt=${value}`; 
+      return this;
+    }
+
+    public setOrderBy(value:string):Firebase { 
+      this.firebaseUrl = `${this.firebaseUrl}&orderBy="${value}"`; 
       return this;
     }
 

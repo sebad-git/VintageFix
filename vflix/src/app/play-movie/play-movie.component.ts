@@ -19,10 +19,10 @@ export class PlayMovieComponent implements OnInit {
     window.scrollTo(0, 0); 
     try {
       this.appRoute.params.subscribe(params => {
-        const paramMovieId = params['movieId'];
-        if (paramMovieId) {
-          this.movieService.findMovie(paramMovieId).subscribe((data) => {
-            this.movie = data;
+        const movieName = params['movieName'];
+        if (movieName) {
+          this.movieService.findMovie(movieName).subscribe((movieRes: Movie) => {
+            this.movie = movieRes;
           });
         }
         else { alert("param movie not found"); }

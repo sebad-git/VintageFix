@@ -18,7 +18,7 @@ export class MovieService {
   
   public getAllMovies(): Observable<Movie[]> { 
     const url = Firebase.create(this.databaseUrl).append("vflix").
-    append("movies").addAuth().build();
+    append("movies").addAuth().setOrderBy("name").build();
     return this.http.get<Movie[]>(url);
   }
 
@@ -40,10 +40,11 @@ export class MovieService {
       map((data: Object) => { return JSON.stringify(data).split(",").length }));
   }
   
-  public findMovie(mid:number) : Observable<Movie> {
-    const url = Firebase.create(this.databaseUrl).append("vflix").
-    append("movies").appendNum(mid).addAuth().build();
-    return this.http.get<Movie>(url);
+  public findMovie(name:string) : Observable<Movie> {
+    return this.getAllMovies().pipe(
+      map((data: Movie[]) => {
+        return data.filter( mdata => mdata.name==name)[0];
+    }));
   }
 
   public findMoviesByCategory(catId:number) : Observable<Movie[]> {
@@ -56,7 +57,7 @@ export class MovieService {
   public findMoviesBestRanked() : Observable<Movie[]> {
     return this.getAllMovies().pipe(
       map((data: Movie[]) => {
-        return data.filter( mdata => mdata.category>=5);
+        return data.filter( mdata => mdata.ranking >= 5);
     }));
   }
  

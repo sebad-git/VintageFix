@@ -7,6 +7,7 @@ export class Movie  {
       public name:string,
       public plot:string,
       public poster:string,
+      public banner:string,
       public category:number,
       public ranking:number,
       public lenght:string,
