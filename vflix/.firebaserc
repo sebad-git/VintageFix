@@ -1,6 +1,8 @@
 {
   "projects": {
-    "default": "vintage-fix"
+    "default": "vintage-fix",
+    "vflix": "vintage-fix",
+    "vintage-fix": "vintage-fix"
   },
   "targets": {
     "vintage-fix": {

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Movie, Category } from '../model/classes';
+import { Firebase } from '../model/firebase';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -11,24 +12,38 @@ import { TranslatorService } from './translator.service';
 })
 export class MovieService {
 
-  constructor(private http: HttpClient) { }
-
-  private readonly moviesUrl =  'https://vintage-fix.firebaseio.com/1/movies.json';
-  private readonly categoryDatabaseEN = 'https://vintage-fix.firebaseio.com/0/categories/0/en.json';
-  private readonly categoryDatabaseES = 'https://vintage-fix.firebaseio.com/0/categories/0/es.json';
+  constructor(private http: HttpClient) {}
   
-  public getAllMovies(): Observable<Movie[]> { return this.http.get<Movie[]>(this.moviesUrl); }
+  private readonly databaseUrl = "https://vintage-fix.firebaseio.com";
+  
+  public getAllMovies(): Observable<Movie[]> { 
+    const url = Firebase.create(this.databaseUrl).append("vflix").
+    append("movies").addAuth().build();
+    return this.http.get<Movie[]>(url);
+  }
+
+    public getAllCategories(): Observable<Category[]> {
+      const firebase:Firebase = Firebase.create(this.databaseUrl);
+      if (navigator.language.includes(TranslatorService.SPANISH)) {
+        const url = firebase.append("vflix").append("categories").append("es").addAuth().build();
+        return this.http.get<Category[]>(url);
+      }else{
+        const url = firebase.append("vflix").append("categories").append("en").addAuth().build();
+        return this.http.get<Category[]>(url);
+      }
+   }
 
   public getMovieCount(): Observable<number> {
-    return this.http.get<Object>(this.moviesUrl+"?shallow=true").pipe(
+    const url = Firebase.create(this.databaseUrl).append("vflix").
+    append("movies").addAuth().setShallow().build();
+    return this.http.get<Object>(url).pipe(
       map((data: Object) => { return JSON.stringify(data).split(",").length }));
   }
   
-  public findMovie(mid:string) : Observable<Movie> {
-    return this.getAllMovies().pipe(
-      map((data: Movie[]) => {
-        return data.filter( mdata => mdata.id==mid)[0];
-    }));
+  public findMovie(mid:number) : Observable<Movie> {
+    const url = Firebase.create(this.databaseUrl).append("vflix").
+    append("movies").appendNum(mid).addAuth().build();
+    return this.http.get<Movie>(url);
   }
 
   public findMoviesByCategory(catId:number) : Observable<Movie[]> {
@@ -44,18 +59,12 @@ export class MovieService {
         return data.filter( mdata => mdata.category>=5);
     }));
   }
-  
-  public getAllCategories(): Observable<Category[]> {
-    if (navigator.language.includes(TranslatorService.SPANISH)) {
-      return this.http.get<Category[]>(this.categoryDatabaseES); 
-    }else{
-      return this.http.get<Category[]>(this.categoryDatabaseEN);
-    }
- }
  
   addMovie(index:number,movie:Movie) {
-    const url = this.moviesUrl.replace(".json","");
-    return this.http.put(url+"/"+index+".json",movie);
+    movie.id = index;
+    const url = Firebase.create(this.databaseUrl).append("vflix").
+    append("movies").appendNum(index).addAuth().build();
+    return this.http.put(url,movie);
   }
   
 }

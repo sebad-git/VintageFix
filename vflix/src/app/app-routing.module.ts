@@ -10,7 +10,7 @@ const routes: Routes = [
   {path:':bestRanked', component: HomeComponent },
   {path:'movie-details/:movieId', component: MovieDetailsComponent },
   {path:'play-movie/:movieId', component: PlayMovieComponent },
-  { path:'admin', component: AdminComponent }
+  { path:'vflix/admin', component: AdminComponent }
 ];
 
 @NgModule({
