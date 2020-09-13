@@ -25,7 +25,7 @@
       
       <div class="movies-container">
         <div *ngFor="let movie of movies;" class="movie zoom-in">
-          <a routerLink="/movie-details/{{movie.name}}">
+          <a routerLink="/movie-details/{{movie.id}}" >
             <img src="{{movie.poster}}"/>
             <div class="movieDetails">
               <div id="rating" > 

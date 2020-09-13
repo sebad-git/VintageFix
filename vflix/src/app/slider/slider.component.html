@@ -6,7 +6,7 @@
     <div id="slider" class="slider fade-in" >
         <ul>
          <li *ngFor="let movie of movies;" > 
-             <a routerLink="/movie-details/{{movie.name}}" >
+             <a routerLink="/movie-details/{{movie.id}}" >
                 <img *ngIf="movie.banner" src="{{movie.banner}}"/>
                 <img *ngIf="!movie.banner" src="{{movie.poster}}"/>
                 <div class="caption"> 

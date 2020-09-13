@@ -20,9 +20,9 @@ export class MovieDetailsComponent implements OnInit {
     try {
       this.loaded = false;
       this.appRoute.params.subscribe(params => {
-        const movieName = params['movieName'];
-        if (movieName) {
-          this.movieService.findMovie(movieName).subscribe((movieRes: Movie) => {
+        const movieId = params['movieId'];
+        if (movieId) {
+          this.movieService.findMovie(movieId).subscribe((movieRes: Movie) => {
             this.movie = movieRes;
           });
         }

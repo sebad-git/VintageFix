@@ -8,7 +8,7 @@ import { AdminComponent } from './admin/admin.component';
 const routes: Routes = [
   {path:'', component: HomeComponent },
   {path:'movie-details/:movieId', component: MovieDetailsComponent },
-  {path:'play-movie/:movieName', component: PlayMovieComponent },
+  {path:'play-movie/:movieId', component: PlayMovieComponent },
   { path:'vflix/admin', component: AdminComponent }
 ];
 

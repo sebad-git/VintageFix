@@ -40,10 +40,10 @@ export class MovieService {
       map((data: Object) => { return JSON.stringify(data).split(",").length }));
   }
   
-  public findMovie(name:string) : Observable<Movie> {
+  public findMovie(movieId:string) : Observable<Movie> {
     return this.getAllMovies().pipe(
       map((data: Movie[]) => {
-        return data.filter( mdata => mdata.name==name)[0];
+        return data.filter( mdata => mdata.id==movieId)[0];
     }));
   }
 
@@ -62,7 +62,6 @@ export class MovieService {
   }
  
   addMovie(index:number,movie:Movie) {
-    movie.id = index;
     const url = Firebase.create(this.databaseUrl).append("vflix").
     append("movies").appendNum(index).addAuth().build();
     return this.http.put(url,movie);
