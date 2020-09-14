@@ -46,6 +46,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
  ngAfterViewInit() {
     try {
+      sessionStorage.removeItem("movie");
       this.loading=true; this.loader.show=this.loading;
       this.movieService.getAllCategories().subscribe((cats: Category[]) => {
         this.categories = cats;
