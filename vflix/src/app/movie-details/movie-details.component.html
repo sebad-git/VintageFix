@@ -1,6 +1,8 @@
 <header> <app-navbar></app-navbar> </header>
 
-<div class="movie fade-in text-center">
+<app-loader></app-loader>
+<app-message></app-message>  
+<div *ngIf="loaded" class="movie fade-in text-center">
 
     <img src="{{movie.poster}}" />
 

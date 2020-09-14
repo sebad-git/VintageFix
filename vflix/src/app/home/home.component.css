@@ -1,4 +1,6 @@
 
+#movies{ min-height: 800px; }
+
 .movies-section{
   padding-right: 0 !important;
   padding: 2% !important;

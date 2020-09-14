@@ -1,0 +1,22 @@
+
+.loader-section{ 
+  margin: auto !important;
+  width: 100% !important; height: 100% !important; 
+}
+
+.loader {
+    border: 4px solid #b9b9b9 !important;
+    border-top: 4px solid #fd4b45 !important;
+    border-right: 4px solid #fd4b45 !important;
+    border-radius: 50% !important;
+    width: 30px !important;
+    height: 30px !important;
+    margin: auto !important;
+    margin-top: 15% !important;
+    animation: spin 1s linear infinite !important;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

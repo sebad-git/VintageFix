@@ -1,10 +1,12 @@
 <header> <app-navbar></app-navbar> </header>
  
  <section id="movies">
+
+  <app-loader></app-loader>
   
-  <app-slider *ngIf="!filtered"> </app-slider>
+  <app-slider *ngIf="!filtered && !loading"> </app-slider>
       
-    <div class="movies-section">
+    <div *ngIf="!loading" class="movies-section">
       <div class="row" style="margin-left: 5% !important;">
         <div class="col-sm-1">
           <h4 id="movies-lbl">{{lblMovies}}</h4>
@@ -22,7 +24,8 @@
         </div>
       </div>
       </div>
-      
+      <app-message></app-message>
+  
       <div class="movies-container">
         <div *ngFor="let movie of movies;" class="movie zoom-in">
           <a routerLink="/movie-details/{{movie.id}}" >

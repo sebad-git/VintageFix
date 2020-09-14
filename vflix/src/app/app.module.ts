@@ -11,6 +11,8 @@ import { FooterComponent } from './footer/footer.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { AdminComponent } from './admin/admin.component';
 import { SliderComponent } from './slider/slider.component';
+import { MessageComponent } from './shared/message/message.component';
+import { LoaderComponent } from './shared/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { SliderComponent } from './slider/slider.component';
     FooterComponent,
     MovieDetailsComponent,
     AdminComponent,
-    SliderComponent
+    SliderComponent,
+    MessageComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

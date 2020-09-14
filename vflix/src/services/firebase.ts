@@ -7,12 +7,7 @@ export class Firebase {
 
     public static create(firebaseUrl:string): Firebase { return new Firebase(firebaseUrl); }
   
-    public append(value:string):Firebase { 
-      this.firebaseUrl = `${this.firebaseUrl}/${value}`; 
-      return this; 
-    }
-    
-    public appendNum(value:number):Firebase { 
+    public addNode(value):Firebase { 
       this.firebaseUrl = `${this.firebaseUrl}/${value}`; 
       return this;
     }
@@ -22,13 +17,18 @@ export class Firebase {
       return this;
     }
 
-    public setNumFilter(field:string,value:number):Firebase { 
+    public setBetween(field:string,value:number):Firebase { 
       this.firebaseUrl = `${this.firebaseUrl}&orderBy="${field}"&startAt=${value}&endAt=${value}`; 
       return this;
     }
 
     public setOrderBy(value:string):Firebase { 
       this.firebaseUrl = `${this.firebaseUrl}&orderBy="${value}"`; 
+      return this;
+    }
+
+    public setWhere(column:string,value:string):Firebase { 
+      this.firebaseUrl = `${this.firebaseUrl}&orderBy="${column}"&equalTo=${value}`; 
       return this;
     }
 
