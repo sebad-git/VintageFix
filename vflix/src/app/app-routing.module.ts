@@ -7,9 +7,9 @@ import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent },
-  {path:'movie-details/:movieId', component: MovieDetailsComponent },
-  {path:'play-movie/:movieId', component: PlayMovieComponent },
-  { path:'vflix/admin', component: AdminComponent }
+  {path:'movie-details',pathMatch: 'full', component: MovieDetailsComponent },
+  {path:'play-movie',pathMatch:'full', component: PlayMovieComponent },
+  { path:'vflix/admin',pathMatch: 'full', component: AdminComponent }
 ];
 
 @NgModule({

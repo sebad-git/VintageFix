@@ -10,7 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { AdminComponent } from './admin/admin.component';
-import { SliderComponent } from './slider/slider.component';
+import { SliderComponent } from './shared/slider/slider.component';
 import { MessageComponent } from './shared/message/message.component';
 import { LoaderComponent } from './shared/loader/loader.component';
 

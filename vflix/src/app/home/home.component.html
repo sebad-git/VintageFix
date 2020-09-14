@@ -3,8 +3,7 @@
  <section id="movies">
 
   <app-loader></app-loader>
-  
-  <app-slider *ngIf="!filtered && !loading"> </app-slider>
+  <app-slider> </app-slider>
       
     <div *ngIf="!loading" class="movies-section">
       <div class="row" style="margin-left: 5% !important;">
@@ -28,7 +27,7 @@
   
       <div class="movies-container">
         <div *ngFor="let movie of movies;" class="movie zoom-in">
-          <a routerLink="/movie-details/{{movie.id}}" >
+          <a (click)="OnMovieselected(movie.id)" >
             <img src="{{movie.poster}}"/>
             <div class="movieDetails">
               <div id="rating" > 

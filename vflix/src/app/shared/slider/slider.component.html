@@ -3,10 +3,10 @@
 
 </script>
 
-    <div id="slider" class="slider fade-in" >
+    <div *ngIf="movies && movies.length>0" id="slider" class="slider fade-in" >
         <ul>
          <li *ngFor="let movie of movies;" > 
-             <a routerLink="/movie-details/{{movie.id}}" >
+             <a (click)="OnMovieselected(movie.id)" >
                 <img *ngIf="movie.banner" src="{{movie.banner}}"/>
                 <img *ngIf="!movie.banner" src="{{movie.poster}}"/>
                 <div class="caption"> 

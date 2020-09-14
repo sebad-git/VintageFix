@@ -54,7 +54,7 @@ button {
   padding-left: 5vmin !important;
   box-shadow: 0 4px 8px 0 var(--shadow), 0 2px 10px 0 var(--shadow) !important;
   border-radius: 50px;
-  background: linear-gradient(145deg, #1615154f, #1a19194f);
+  background: linear-gradient(145deg, #161515a8, #1a1919a8);
   box-shadow:  20px 20px 60px #141414, -20px -20px 60px #1c1a1a;
 }
 

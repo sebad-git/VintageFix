@@ -2,9 +2,9 @@
 
 <app-loader></app-loader>
 <app-message></app-message>  
-<div *ngIf="loaded" class="movie fade-in text-center">
+<div *ngIf="movie" class="movie fade-in text-center">
 
-    <img src="{{movie.poster}}" />
+    <img src="{{movie.banner}}" />
 
     <div class="movie-overlay">
         <div class="movie-info">
@@ -12,7 +12,7 @@
             <p><strong>{{movie.lenght}}</strong></p>
             <h4>{{movie.plot}}</h4>
         </div>
-        <button routerLink="/play-movie/{{movie.id}}" class="play-button"> 
+        <button (click)="OnMovieselected()" class="play-button"> 
             <i class="fas fa-play-circle"></i> <span>Ver</span> 
         </button>
     </div>

@@ -3,18 +3,17 @@
     padding-right: 0 !important;
     padding: 1.2% !important;
     margin: 0 !important;
-    margin-left: 10% !important;
-    width:80% !important;
-    height:200vmin !important;
+    margin: auto !important;
+    width:90% !important;
+    height:100% !important;
+    border-radius: 30px !important;
 }
-
 .movie img {
     width:100% !important; height:100% !important;
     margin: 0 !important; padding: 0 !important;
     border-radius: 10px !important;
     padding: 20vmin;
   }
-
   .movie-overlay {
     z-index: 2;
     font-size: 1.6rem;
@@ -44,7 +43,7 @@
     font-size: 2rem;
     padding-top: 0 !important;
     margin-left: 10% !important;
-    color: lightsteelblue !important;
+    color: #d4423d !important;
   }
 
   .play-button{
