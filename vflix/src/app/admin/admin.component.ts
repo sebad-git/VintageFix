@@ -67,10 +67,8 @@ export class AdminComponent implements OnInit {
       if(!this.title){ this.showError("Title is empty."); return; }
       if(!this.plot){ this.showError("Plot is empty."); return; }
       if(!this.category || this.category<=0 ){ this.showError("Select a Category."); return; }
-     
       if(!this.poster){ this.showError("Poster is empty."); return; } 
-      if(!this.hours){ this.showError("Time is empty."); return; }
-
+      if(!this.hours || !this.minutes ){ this.showError("Time is empty."); return; }
       if(!this.video){ this.showError("Video url source is empty."); return; }
       if(!this.video.includes(".mp4")){ this.showError("The Video url must contain mp4."); return; }
 

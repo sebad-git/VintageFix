@@ -7,14 +7,13 @@
   	border-radius: 3px !important;
 }
 
-.slider ul{ padding:0; display:flex; width:1000%; animation: slide 30s infinite alternate;  }
+.slider ul{ padding:0; display:flex; width:400%; animation: slide 30s infinite alternate;  }
 .slider li{ width:100%; list-style-type: none; height: 60vmin !important; }
 .slider img{ width:100%; height:100%; }
 
 .caption{
 	transform: translateY(-25vmin) !important;
 	padding: 2vmin !important;
-	/*background: linear-gradient(to top left, #c6c5d42f,#2f2f416b) !important; */
 }
 
 .slider h2{

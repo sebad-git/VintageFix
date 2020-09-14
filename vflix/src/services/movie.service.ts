@@ -72,7 +72,7 @@ export class MovieService {
  
   addMovie(index:number,movie:Movie) {
     const url = Firebase.create(this.databaseUrl).addNode("vflix").
-    addNode("movies").addAuth().build();
+    addNode("movies").addNode(index).addAuth().build();
     return this.http.put(url,movie);
   }
   

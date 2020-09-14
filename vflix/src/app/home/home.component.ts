@@ -54,11 +54,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
           this.lblMovies = data["movies"];
           this.movieService.getAllMovies().subscribe((data: Movie[]) => {
             this.movieCollection = data;
+            this.movieCollection.sort((a, b) => a.name.localeCompare(b.name));
             this.movies = data;
             this.filtered=false;
             this.loading=false; this.loader.show=this.loading;
-            this.slider.movies = this.movieCollection.filter( movie => movie.ranking > 6);
-            this.slider.movies.slice(0,4);
+            this.slider.movies = this.movieCollection.slice();
+            this.slider.movies.sort( (a, b)=> { return b.ranking - a.ranking });
+            this.slider.movies = this.slider.movies.slice(0,4);
           });
         });
       });
