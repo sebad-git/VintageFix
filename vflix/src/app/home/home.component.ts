@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
             this.loading=false; this.loader.show=this.loading;
             this.slider.movies = this.movieCollection.slice();
             this.slider.movies.sort( (a, b)=> { return b.ranking - a.ranking });
-            this.slider.movies = this.slider.movies.slice(0,4);
+            this.slider.movies = this.slider.movies.slice(0,7);
           });
         });
       });
